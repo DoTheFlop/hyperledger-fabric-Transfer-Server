@@ -64,12 +64,12 @@ public class TestService {
 
         byte[] result;
 
-        contract.submitTransaction("CreateAsset", "asset13", "yellow", "5", "Tom", "1300");
+        contract.submitTransaction("CreateAsset", "asset4", "테스트");
 
         return "OK";
     }
 
-    public String createCoin(String assetId, String coinName, String coinValue) throws Exception {
+    public String createCoin(String coinName) throws Exception {
 
         Gateway gateway = connect();
 
@@ -78,8 +78,7 @@ public class TestService {
 
         byte[] result;
 
-        result = contract.submitTransaction("CreateCoin", assetId, coinName, coinValue);
-
+        result = contract.submitTransaction("CreateCoin", coinName);
 
 
         return new String(result, StandardCharsets.UTF_8);

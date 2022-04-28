@@ -30,11 +30,9 @@ public class TestApiController {
 
     @PostMapping("/coin")
     public String createCoin(
-            @RequestParam String assetId,
-            @RequestParam String coinName,
-            @RequestParam String coinValue
+            @RequestParam String coinName
     ) throws Exception {
-        return testService.createCoin(assetId, coinName, coinValue);
+        return testService.createCoin(coinName);
     }
 
 }
